@@ -1,0 +1,5 @@
+let fib x = 
+	let rec helper pop obec ile =
+	   if ile=x then pop+obec 
+	      else helper obec (pop+obec) (ile+1)
+	in helper 0 1 1;;

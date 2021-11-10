@@ -15,7 +15,9 @@ let treeheights tree =
     fold_tree  maks Empty tree;;
 
 let a = Node(Node(Empty, 1, Empty), 2, Node(Node(Empty, 1, Empty), 2, Empty));;
-
-
+let b = Node(a, 1, Empty);;
+let c = Node(b, 1 ,a);;
 
 treeheights a;;
+treeheights b;;
+treeheights c;;

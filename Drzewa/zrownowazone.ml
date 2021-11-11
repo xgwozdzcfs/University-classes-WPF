@@ -12,7 +12,9 @@ let zrownowazone drzewo =
     | [x] -> x 
     | h::t -> fold_left (fun a e -> if e = a then a else raise Nie) h t 
   in 
-  try let _ = fold_tree (fun _ l -> porownaj l - 1) drzewo in true with
+  try 
+    let _ = fold_tree (fun _ l -> porownaj l + 1) drzewo in true
+  with
     Nie -> false;;
 
 

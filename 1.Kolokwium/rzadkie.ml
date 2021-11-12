@@ -1,4 +1,4 @@
-
+open List;;
 let rzadkie x=
   let rec oblicz l ak= 
     match l with 

@@ -11,6 +11,5 @@ let levels t =
     | h::t -> (x::h)::l (r t) in
   fold_tree f (fun x -> x) t [];;
         
-let drzewko = Nodek(1, [Nodek(2, []); Nodek(3, [Nodek(4, [])]); Nodek(4, [])]);;
 let drzewko1 = Node(Leaf, 3, Node(Node(Leaf, 5, Leaf), 4, Node(Leaf, 6, Leaf)));;
 levels drzewko1;;

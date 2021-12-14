@@ -1,0 +1,25 @@
+let wieze n lista =
+  let tab = Array.of_list lista in
+  let tsets = Array.init n (fun i -> Find_Union.make_set i) in 
+  let tab2 = Array.make n (0,0,0) in 
+  for  i=0 to n-1 do
+    let (p, k) = tab.(i) in
+    tab2.(i) <- (p, k, i) ;
+  done;
+  Array.sort compare tab2;
+  for i = 0 to n-2 do
+    let (p1, _, nr1) = tab2.(i)
+    and (p2, _, nr2) = tab2.(i+1) in 
+    if p1 = p2 then Find_Union.union tsets.(nr1) tsets.(nr2)
+  done;
+  for  i=0 to n-1 do
+    let (p, k, nr) = tab2.(i) in
+    tab2.(i) <- (k, p, nr) ;
+  done;
+  Array.sort compare tab2;
+  for i = 0 to n-2 do
+    let (p1, _, nr1) = tab2.(i)
+    and (p2, _, nr2) = tab2.(i+1) in 
+    if p1 = p2 then Find_Union.union tsets.(nr1) tsets.(nr2)
+  done;
+  Find_Union.n_of_sets ();; 

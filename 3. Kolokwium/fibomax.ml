@@ -1,3 +1,4 @@
+(*rozklad liczby na maksymalna liczbe liczb fibonacciego*)
 open Array;;
 open List;;
 let fibomax n= 
